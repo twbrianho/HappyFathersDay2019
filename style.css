@@ -1,0 +1,824 @@
+html, body {
+    background: rgb(255,106,114);
+    background: linear-gradient(0deg, rgba(255,106,114,1) 0%, rgba(228,30,43,1) 59%, rgba(153,18,26,1) 100%);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.centered-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes floating {
+    0% {
+        filter: drop-shadow(7px 15px 15px rgba(0, 0, 0, 0.5));
+        transform: translatey(30px);
+    }
+    50% {
+        filter: drop-shadow(15px 15px 15px rgba(0, 0, 0, 0.2));
+        transform: translatey(-30px);
+    }
+    100% {
+        filter: drop-shadow(7px 15px 15px rgba(0, 0, 0, 0.5));
+        transform: translatey(30px);
+    }
+}
+
+#cola-ride {
+    z-index: 1;
+    position: absolute;
+    width: 85%;
+    height: 90%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    animation: floating 3s ease-in-out infinite;
+    filter: drop-shadow(7px 15px 15px rgba(0, 0, 0, 0.5));
+}
+
+@keyframes shimmering {
+    0% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+
+#main-text {
+    width: 100%;
+    height: 100%;
+    background-image: url("assets/main_text.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: shimmering 4s linear infinite;
+}
+
+.waves-container {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}
+
+.wave-inner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+}
+
+@keyframes move-wave {
+    0% {
+        transform: translateX(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(25%) scaleY(0.7)
+    }
+    100% {
+        transform: translateX(50%) scaleY(1)
+    }
+}
+
+.wave {
+    position: absolute;
+    right: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.wave-top {
+    z-index: 15;
+    opacity: 0.75;
+    background-size: 50% 20%;
+    animation: move-wave 2s linear infinite;
+}
+
+.wave-mid {
+    z-index: 10;
+    opacity: 0.75;
+    background-size: 50% 24%;
+    animation: move-wave 4s linear infinite;
+}
+
+.wave-bot {
+    z-index: 5;
+    opacity: 0.75;
+    background-size: 50% 20%;
+    animation: move-wave 6s linear infinite;
+}
+
+[class^=cola-can] {
+    position: absolute;
+    width: 5.25%;
+    height: 7.5%;
+    top: 50%;
+    background-image: url("assets/cola_can.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    filter: drop-shadow(0px 0px 7px rgba(100, 0, 0, 1));
+}
+
+@-webkit-keyframes falling {
+    0% {
+        -webkit-transform: translate(-952%, -667%) rotate(0deg);
+        transform: translate(-960px, -500px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translate(0px, 0px) rotate(180deg);
+        transform: translate(0px, 0px) rotate(180deg);
+    }
+    100% {
+        -webkit-transform: translate(952%, 667%) rotate(360deg);
+        transform: translate(960px, 500px) rotate(360deg);
+    }
+}
+
+@keyframes falling {
+    0% {
+        -webkit-transform: translate(-960px, -500px) rotate(0deg);
+        transform: translate(-960px, -500px) rotate(0deg);
+    }
+    50% {
+        -webkit-transform: translate(0px, 0px) rotate(180deg);
+        transform: translate(0px, 0px) rotate(180deg);
+    }
+    100% {
+        -webkit-transform: translate(960px, 500px) rotate(360deg);
+        transform: translate(960px, 500px) rotate(360deg);
+    }
+}
+
+.cola-can1 {
+    opacity: 0.7746221072;
+    left: -93.3333333333%;
+    -webkit-animation: falling 2.9987736755s linear infinite;
+    animation: falling 2.9987736755s linear infinite;
+    -webkit-animation-delay: -2.6103662577s;
+    animation-delay: -2.6103662577s;
+}
+
+.cola-can2 {
+    opacity: 0.4896273906;
+    left: -86.6666666667%;
+    -webkit-animation: falling 3.5626943253s linear infinite;
+    animation: falling 3.5626943253s linear infinite;
+    -webkit-animation-delay: -1.3762914364s;
+    animation-delay: -1.3762914364s;
+}
+
+.cola-can3 {
+    opacity: 0.7110863605;
+    left: -80%;
+    -webkit-animation: falling 3.4209852458s linear infinite;
+    animation: falling 3.4209852458s linear infinite;
+    -webkit-animation-delay: -1.9017449932s;
+    animation-delay: -1.9017449932s;
+}
+
+.cola-can4 {
+    opacity: 0.309245328;
+    left: -73.3333333333%;
+    -webkit-animation: falling 2.1415825689s linear infinite;
+    animation: falling 2.1415825689s linear infinite;
+    -webkit-animation-delay: -2.8029616035s;
+    animation-delay: -2.8029616035s;
+}
+
+.cola-can5 {
+    opacity: 0.4881979771;
+    left: -66.6666666667%;
+    -webkit-animation: falling 3.5056273196s linear infinite;
+    animation: falling 3.5056273196s linear infinite;
+    -webkit-animation-delay: -3.3098530793s;
+    animation-delay: -3.3098530793s;
+}
+
+.cola-can6 {
+    opacity: 0.9433805176;
+    left: -60%;
+    -webkit-animation: falling 3.7571055371s linear infinite;
+    animation: falling 3.7571055371s linear infinite;
+    -webkit-animation-delay: -0.4597651138s;
+    animation-delay: -0.4597651138s;
+}
+
+.cola-can7 {
+    opacity: 0.8389871295;
+    left: -53.3333333333%;
+    -webkit-animation: falling 3.356609668s linear infinite;
+    animation: falling 3.356609668s linear infinite;
+    -webkit-animation-delay: -3.3370738412s;
+    animation-delay: -3.3370738412s;
+}
+
+.cola-can8 {
+    opacity: 0.3055421454;
+    left: -46.6666666667%;
+    -webkit-animation: falling 3.7168058425s linear infinite;
+    animation: falling 3.7168058425s linear infinite;
+    -webkit-animation-delay: -3.021936364s;
+    animation-delay: -3.021936364s;
+}
+
+.cola-can9 {
+    opacity: 0.9885572209;
+    left: -40%;
+    -webkit-animation: falling 2.3346182002s linear infinite;
+    animation: falling 2.3346182002s linear infinite;
+    -webkit-animation-delay: -1.2548258732s;
+    animation-delay: -1.2548258732s;
+}
+
+.cola-can10 {
+    opacity: 0.516906102;
+    left: -33.3333333333%;
+    -webkit-animation: falling 2.5851460513s linear infinite;
+    animation: falling 2.5851460513s linear infinite;
+    -webkit-animation-delay: -0.9923471003s;
+    animation-delay: -0.9923471003s;
+}
+
+.cola-can11 {
+    opacity: 0.8808987137;
+    left: -26.6666666667%;
+    -webkit-animation: falling 3.9375578738s linear infinite;
+    animation: falling 3.9375578738s linear infinite;
+    -webkit-animation-delay: -3.6440451459s;
+    animation-delay: -3.6440451459s;
+}
+
+.cola-can12 {
+    opacity: 0.2202220108;
+    left: -20%;
+    -webkit-animation: falling 2.1681965296s linear infinite;
+    animation: falling 2.1681965296s linear infinite;
+    -webkit-animation-delay: -1.2716707389s;
+    animation-delay: -1.2716707389s;
+}
+
+.cola-can13 {
+    opacity: 0.2726876605;
+    left: -13.3333333333%;
+    -webkit-animation: falling 2.1518156829s linear infinite;
+    animation: falling 2.1518156829s linear infinite;
+    -webkit-animation-delay: -3.8075936257s;
+    animation-delay: -3.8075936257s;
+}
+
+.cola-can14 {
+    opacity: 0.5847800634;
+    left: -6.6666666667%;
+    -webkit-animation: falling 2.2586689448s linear infinite;
+    animation: falling 2.2586689448s linear infinite;
+    -webkit-animation-delay: -3.3145645266s;
+    animation-delay: -3.3145645266s;
+}
+
+.cola-can15 {
+    opacity: 0.7040019659;
+    left: 0%;
+    -webkit-animation: falling 3.7822910054s linear infinite;
+    animation: falling 3.7822910054s linear infinite;
+    -webkit-animation-delay: -0.5098028078s;
+    animation-delay: -0.5098028078s;
+}
+
+.cola-can16 {
+    opacity: 0.3905069343;
+    left: 6.6666666667%;
+    -webkit-animation: falling 2.820180382s linear infinite;
+    animation: falling 2.820180382s linear infinite;
+    -webkit-animation-delay: -3.1760131724s;
+    animation-delay: -3.1760131724s;
+}
+
+.cola-can17 {
+    opacity: 0.2352823459;
+    left: 13.3333333333%;
+    -webkit-animation: falling 3.6300381898s linear infinite;
+    animation: falling 3.6300381898s linear infinite;
+    -webkit-animation-delay: -3.7532632598s;
+    animation-delay: -3.7532632598s;
+}
+
+.cola-can18 {
+    opacity: 0.6886389744;
+    left: 20%;
+    -webkit-animation: falling 2.8142675046s linear infinite;
+    animation: falling 2.8142675046s linear infinite;
+    -webkit-animation-delay: -3.6726887905s;
+    animation-delay: -3.6726887905s;
+}
+
+.cola-can19 {
+    opacity: 0.5112155981;
+    left: 26.6666666667%;
+    -webkit-animation: falling 3.7574646219s linear infinite;
+    animation: falling 3.7574646219s linear infinite;
+    -webkit-animation-delay: -0.8352325291s;
+    animation-delay: -0.8352325291s;
+}
+
+.cola-can20 {
+    opacity: 0.9555751661;
+    left: 33.3333333333%;
+    -webkit-animation: falling 2.4745922222s linear infinite;
+    animation: falling 2.4745922222s linear infinite;
+    -webkit-animation-delay: -1.9407343862s;
+    animation-delay: -1.9407343862s;
+}
+
+.cola-can21 {
+    opacity: 0.7321627596;
+    left: 40%;
+    -webkit-animation: falling 3.5091778423s linear infinite;
+    animation: falling 3.5091778423s linear infinite;
+    -webkit-animation-delay: -2.3587945368s;
+    animation-delay: -2.3587945368s;
+}
+
+.cola-can22 {
+    opacity: 0.6369635527;
+    left: 46.6666666667%;
+    -webkit-animation: falling 3.331606821s linear infinite;
+    animation: falling 3.331606821s linear infinite;
+    -webkit-animation-delay: -0.4464601972s;
+    animation-delay: -0.4464601972s;
+}
+
+.cola-can23 {
+    opacity: 0.3945668657;
+    left: 53.3333333333%;
+    -webkit-animation: falling 3.8524048474s linear infinite;
+    animation: falling 3.8524048474s linear infinite;
+    -webkit-animation-delay: -3.7780290845s;
+    animation-delay: -3.7780290845s;
+}
+
+.cola-can24 {
+    opacity: 0.8399138787;
+    left: 60%;
+    -webkit-animation: falling 3.5449975038s linear infinite;
+    animation: falling 3.5449975038s linear infinite;
+    -webkit-animation-delay: -0.0780214193s;
+    animation-delay: -0.0780214193s;
+}
+
+.cola-can25 {
+    opacity: 0.8546333774;
+    left: 66.6666666667%;
+    -webkit-animation: falling 3.4444536348s linear infinite;
+    animation: falling 3.4444536348s linear infinite;
+    -webkit-animation-delay: -1.7097080136s;
+    animation-delay: -1.7097080136s;
+}
+
+.cola-can26 {
+    opacity: 0.8620900454;
+    left: 73.3333333333%;
+    -webkit-animation: falling 3.1288160769s linear infinite;
+    animation: falling 3.1288160769s linear infinite;
+    -webkit-animation-delay: -3.5101386026s;
+    animation-delay: -3.5101386026s;
+}
+
+.cola-can27 {
+    opacity: 0.8158292794;
+    left: 80%;
+    -webkit-animation: falling 3.9432296278s linear infinite;
+    animation: falling 3.9432296278s linear infinite;
+    -webkit-animation-delay: -1.8309151464s;
+    animation-delay: -1.8309151464s;
+}
+
+.cola-can28 {
+    opacity: 0.3100289785;
+    left: 86.6666666667%;
+    -webkit-animation: falling 2.9477160285s linear infinite;
+    animation: falling 2.9477160285s linear infinite;
+    -webkit-animation-delay: -0.3518699556s;
+    animation-delay: -0.3518699556s;
+}
+
+.cola-can29 {
+    opacity: 0.6259961481;
+    left: 93.3333333333%;
+    -webkit-animation: falling 2.6795502354s linear infinite;
+    animation: falling 2.6795502354s linear infinite;
+    -webkit-animation-delay: -3.3707156512s;
+    animation-delay: -3.3707156512s;
+}
+
+.cola-can30 {
+    opacity: 0.7987284953;
+    left: 100%;
+    -webkit-animation: falling 3.6682690902s linear infinite;
+    animation: falling 3.6682690902s linear infinite;
+    -webkit-animation-delay: -1.6266348805s;
+    animation-delay: -1.6266348805s;
+}
+
+[class^=bubble] {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: white;
+    -webkit-animation: rising 4s infinite;
+    animation: rising 4s infinite;
+}
+
+@-webkit-keyframes rising {
+    0% {
+        opacity: 0.9;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000%);
+        transform: translateY(-2000%);
+    }
+}
+
+@keyframes rising {
+    0% {
+        opacity: 0.9;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(-2000%);
+        transform: translateY(-2000%);
+    }
+}
+.bubble1 {
+    left: 46.5092298452%;
+    bottom: -7.772407582%;
+    -webkit-animation-delay: -3.1629124558s;
+    animation-delay: -3.1629124558s;
+}
+
+.bubble2 {
+    left: 35.0601546451%;
+    bottom: 13.0217626675%;
+    -webkit-animation-delay: -0.2983197143s;
+    animation-delay: -0.2983197143s;
+}
+
+.bubble3 {
+    left: 34.3251477754%;
+    bottom: -2.717709036%;
+    -webkit-animation-delay: -0.2964849181s;
+    animation-delay: -0.2964849181s;
+}
+
+.bubble4 {
+    left: 91.0938347909%;
+    bottom: -1.557760036%;
+    -webkit-animation-delay: -3.2641504209s;
+    animation-delay: -3.2641504209s;
+}
+
+.bubble5 {
+    left: 90.2428147564%;
+    bottom: 14.3796864811%;
+    -webkit-animation-delay: -2.8265570978s;
+    animation-delay: -2.8265570978s;
+}
+
+.bubble6 {
+    left: 58.2706556237%;
+    bottom: -5.7412406561%;
+    -webkit-animation-delay: -3.7450362997s;
+    animation-delay: -3.7450362997s;
+}
+
+.bubble7 {
+    left: 12.1646690551%;
+    bottom: 14.5450391367%;
+    -webkit-animation-delay: -1.4432076013s;
+    animation-delay: -1.4432076013s;
+}
+
+.bubble8 {
+    left: 16.8259811535%;
+    bottom: -4.6293270278%;
+    -webkit-animation-delay: -1.3993646024s;
+    animation-delay: -1.3993646024s;
+}
+
+.bubble9 {
+    left: 50.867669205%;
+    bottom: -3.2598831564%;
+    -webkit-animation-delay: -2.8350080856s;
+    animation-delay: -2.8350080856s;
+}
+
+.bubble10 {
+    left: 50.6451804125%;
+    bottom: -5.243236356%;
+    -webkit-animation-delay: -1.1233269703s;
+    animation-delay: -1.1233269703s;
+}
+
+.bubble11 {
+    left: 2.077114522%;
+    bottom: 0.1189644931%;
+    -webkit-animation-delay: -3.9905100429s;
+    animation-delay: -3.9905100429s;
+}
+
+.bubble12 {
+    left: 39.9819167172%;
+    bottom: 2.8540376177%;
+    -webkit-animation-delay: -1.6329823587s;
+    animation-delay: -1.6329823587s;
+}
+
+.bubble13 {
+    left: 14.4579110337%;
+    bottom: -8.4946560361%;
+    -webkit-animation-delay: -0.4177635076s;
+    animation-delay: -0.4177635076s;
+}
+
+.bubble14 {
+    left: 0.0260679181%;
+    bottom: 11.9206530582%;
+    -webkit-animation-delay: -3.9483286993s;
+    animation-delay: -3.9483286993s;
+}
+
+.bubble15 {
+    left: 31.0330132289%;
+    bottom: 5.2990304381%;
+    -webkit-animation-delay: -2.659274817s;
+    animation-delay: -2.659274817s;
+}
+
+.bubble16 {
+    left: 22.7074287687%;
+    bottom: 19.6480461397%;
+    -webkit-animation-delay: -2.6632197719s;
+    animation-delay: -2.6632197719s;
+}
+
+.bubble17 {
+    left: 1.0056683133%;
+    bottom: 0.2051021934%;
+    -webkit-animation-delay: -2.4697143496s;
+    animation-delay: -2.4697143496s;
+}
+
+.bubble18 {
+    left: 11.7370195255%;
+    bottom: -2.3106763468%;
+    -webkit-animation-delay: -3.0544022494s;
+    animation-delay: -3.0544022494s;
+}
+
+.bubble19 {
+    left: 66.2869875073%;
+    bottom: 12.5702238492%;
+    -webkit-animation-delay: -2.0342448584s;
+    animation-delay: -2.0342448584s;
+}
+
+.bubble20 {
+    left: 89.2128630498%;
+    bottom: 8.3058137851%;
+    -webkit-animation-delay: -3.809013166s;
+    animation-delay: -3.809013166s;
+}
+
+.bubble21 {
+    left: 84.1563208667%;
+    bottom: -6.8790319321%;
+    -webkit-animation-delay: -3.679132574s;
+    animation-delay: -3.679132574s;
+}
+
+.bubble22 {
+    left: 14.5356359411%;
+    bottom: 14.8357618715%;
+    -webkit-animation-delay: -1.9591423776s;
+    animation-delay: -1.9591423776s;
+}
+
+.bubble23 {
+    left: 48.7219315366%;
+    bottom: -8.7965528344%;
+    -webkit-animation-delay: -2.7440455648s;
+    animation-delay: -2.7440455648s;
+}
+
+.bubble24 {
+    left: 4.5291989592%;
+    bottom: -4.3168722612%;
+    -webkit-animation-delay: -1.786485434s;
+    animation-delay: -1.786485434s;
+}
+
+.bubble25 {
+    left: 38.6810540875%;
+    bottom: 4.4808073994%;
+    -webkit-animation-delay: -3.9224534136s;
+    animation-delay: -3.9224534136s;
+}
+
+.bubble26 {
+    left: 75.0910513893%;
+    bottom: -9.1461555091%;
+    -webkit-animation-delay: -1.0021645288s;
+    animation-delay: -1.0021645288s;
+}
+
+.bubble27 {
+    left: 15.6120116865%;
+    bottom: -5.9219856142%;
+    -webkit-animation-delay: -2.3183375754s;
+    animation-delay: -2.3183375754s;
+}
+
+.bubble28 {
+    left: 56.8756083867%;
+    bottom: -5.4146644011%;
+    -webkit-animation-delay: -0.7345481628s;
+    animation-delay: -0.7345481628s;
+}
+
+.bubble29 {
+    left: 77.2650116524%;
+    bottom: -7.0168776174%;
+    -webkit-animation-delay: -2.7146056517s;
+    animation-delay: -2.7146056517s;
+}
+
+.bubble30 {
+    left: 56.5421252687%;
+    bottom: 18.6309268269%;
+    -webkit-animation-delay: -3.0773104359s;
+    animation-delay: -3.0773104359s;
+}
+
+.bubble31 {
+    left: 76.7593992056%;
+    bottom: 13.5833204686%;
+    -webkit-animation-delay: -3.9794078331s;
+    animation-delay: -3.9794078331s;
+}
+
+.bubble32 {
+    left: 36.0453620172%;
+    bottom: -1.7792474182%;
+    -webkit-animation-delay: -1.7864058191s;
+    animation-delay: -1.7864058191s;
+}
+
+.bubble33 {
+    left: 18.9495153455%;
+    bottom: -5.7367375269%;
+    -webkit-animation-delay: -2.8697344912s;
+    animation-delay: -2.8697344912s;
+}
+
+.bubble34 {
+    left: 49.8276594331%;
+    bottom: 9.7665578439%;
+    -webkit-animation-delay: -1.9218832828s;
+    animation-delay: -1.9218832828s;
+}
+
+.bubble35 {
+    left: 31.7538657541%;
+    bottom: 4.6388970895%;
+    -webkit-animation-delay: -1.6774766687s;
+    animation-delay: -1.6774766687s;
+}
+
+.bubble36 {
+    left: 2.6192570405%;
+    bottom: -5.5634477969%;
+    -webkit-animation-delay: -2.9071663122s;
+    animation-delay: -2.9071663122s;
+}
+
+.bubble37 {
+    left: 92.2529301493%;
+    bottom: -6.1084044943%;
+    -webkit-animation-delay: -1.686027942s;
+    animation-delay: -1.686027942s;
+}
+
+.bubble38 {
+    left: 26.852252232%;
+    bottom: -1.5533200022%;
+    -webkit-animation-delay: -2.5210972588s;
+    animation-delay: -2.5210972588s;
+}
+
+.bubble39 {
+    left: 30.971880589%;
+    bottom: -1.2765219687%;
+    -webkit-animation-delay: -2.6540283983s;
+    animation-delay: -2.6540283983s;
+}
+
+.bubble40 {
+    left: 75.7349471991%;
+    bottom: 15.7793492984%;
+    -webkit-animation-delay: -3.0093964414s;
+    animation-delay: -3.0093964414s;
+}
+
+.bubble41 {
+    left: 45.435280434%;
+    bottom: -6.4018349977%;
+    -webkit-animation-delay: -3.2719462337s;
+    animation-delay: -3.2719462337s;
+}
+
+.bubble42 {
+    left: 74.1156700495%;
+    bottom: -6.8232322637%;
+    -webkit-animation-delay: -2.8413005836s;
+    animation-delay: -2.8413005836s;
+}
+
+.bubble43 {
+    left: 19.015458904%;
+    bottom: 9.6702320855%;
+    -webkit-animation-delay: -3.4700302081s;
+    animation-delay: -3.4700302081s;
+}
+
+.bubble44 {
+    left: 21.8704296776%;
+    bottom: 0.6658032349%;
+    -webkit-animation-delay: -1.1767694585s;
+    animation-delay: -1.1767694585s;
+}
+
+.bubble45 {
+    left: 97.1326679712%;
+    bottom: -7.5564907365%;
+    -webkit-animation-delay: -2.4723457987s;
+    animation-delay: -2.4723457987s;
+}
+
+.bubble46 {
+    left: 11.4758354174%;
+    bottom: 2.3756613363%;
+    -webkit-animation-delay: -0.3316315353s;
+    animation-delay: -0.3316315353s;
+}
+
+.bubble47 {
+    left: 77.0531946091%;
+    bottom: 0.5077402413%;
+    -webkit-animation-delay: -0.0372692226s;
+    animation-delay: -0.0372692226s;
+}
+
+.bubble48 {
+    left: 72.9271716059%;
+    bottom: 6.6052417375%;
+    -webkit-animation-delay: -2.7480988175s;
+    animation-delay: -2.7480988175s;
+}
+
+.bubble49 {
+    left: 15.6369795839%;
+    bottom: 6.322422854%;
+    -webkit-animation-delay: -3.1759971676s;
+    animation-delay: -3.1759971676s;
+}
+
+.bubble50 {
+    left: 33.9946329418%;
+    bottom: -6.6037976952%;
+    -webkit-animation-delay: -3.0944521618s;
+    animation-delay: -3.0944521618s;
+}
